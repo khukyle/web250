@@ -19,15 +19,15 @@
   $bird1 = new Bird;
   $bird1->commonName = "Eastern Towhee";
   $bird1->food = "seeds, fruits, insects, spiders";
-  $bird1->nestPlacement = "Ground";
-  $bird1->conservationLevel = "Low";
+  $bird1->nestPlacement = "ground";
+  $bird1->conservationLevel = "low";
   
   $bird2 = new Bird;
   $bird2->commonName = "Indigo Bunting";
   $bird2->food = "small seeds, berries, buds and insects";
-  $bird2->nestPlacement = "roadsides, and railroad right-of-wafields";
-  $bird2->conservationLevel = "Low";
+  $bird2->nestPlacement = "roadsides and railroads";
+  $bird2->conservationLevel = "low";
 
-  echo "The " . $bird1->commonName . " eats " . $bird1->food . ".</ br> It Nests on " . $bird1->nestPlacement . " and its conservation level is " . $bird1->conservationLevel .".</br>";
-  echo "The " . $bird2->commonName . " eats " . $bird2->food . ".</ br> It Nests on " . $bird2->nestPlacement . " and its conservation level is " . $bird2->conservationLevel .".</br>";
+  echo "The " . $bird1->commonName . " eats " . $bird1->food . ".</br> It nests on " . $bird1->nestPlacement . " and its conservation level is " . $bird1->conservationLevel .".</br></br>";
+  echo "The " . $bird2->commonName . " eats " . $bird2->food . ".</br> It nests on " . $bird2->nestPlacement . " and its conservation level is " . $bird2->conservationLevel .".</br></br>";
 ?>
