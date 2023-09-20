@@ -8,8 +8,8 @@ class Bird {
     var $nesting = "tree";
     var $conservation;
     var $song = "chirp";
-    var $flying = "yes";
-    protected static $egg_num = 0;
+    static $flying = "yes";
+    static $egg_num = 0;
 
 
     function can_fly() {
@@ -34,11 +34,12 @@ class YellowBelliedFlyCatcher extends Bird {
     var $name = "yellow-bellied flycatcher";
     var $diet = "mostly insects.";
     var $song = "flat chilk";
-    protected static $egg_num = "3-4, sometimes 5."
+    static $egg_num = "3-4, sometimes 5.";
 }
 
 class Kiwi extends Bird {
     var $name = "kiwi";
     var $diet = "omnivorous";
-    var $flying = "no";
+    static $flying = "no";
 }
+?>
