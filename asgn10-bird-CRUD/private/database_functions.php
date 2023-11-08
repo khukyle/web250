@@ -21,8 +21,4 @@ function db_disconnect($connection) {
   }
 }
 
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> dev
