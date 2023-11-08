@@ -1,34 +1,16 @@
 <?php
 
-class Bird {
+class Bird extends DatabaseObject {
 
-  static protected $database;
+  static protected $table_name = 'birds';
+  static protected $db_columns = ['id', 'common_name', 'habitat', 'food', 'conservation_id', 'backyard_tips'];
 
-  static public function set_database($database) {
-    self::$database = $database;
-  }
-
-  static public function find_by_sql($sql) {
-    $result = self::$database->query($sql);
-    if(!$result) {
-      exit("Database query failed");
-    }
-    return $result;
-  }
-
-  static public function find_all() {
-    $sql = "SELECT * FROM birds";
-    return self::find_by_sql($sql);
-  }
-
+  public $id;
   public $common_name;
   public $habitat;
   public $food;
-  public $nest_placement;
-  public $behavior;
   public $conservation_id;
   public $backyard_tips;
- 
 
   protected const CONSERVATION_OPTIONS = [
     1 => 'Low concern',
@@ -56,6 +38,18 @@ class Bird {
       return "Unknown";
     }
   }
+
+
+  protected function validate() {
+    $this->errors = [];
+
+    if(is_blank($this->common_name)) {
+      $this->errors[] = "Bird name cannot be blank.";
+    }
+   
+    return $this->errors;
+  }
+
 
 }
 
