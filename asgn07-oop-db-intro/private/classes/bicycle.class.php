@@ -2,7 +2,6 @@
 
 class Bicycle {
 
-<<<<<<< HEAD
   // ----- START OF ACTIVE RECORD CODE ------
   static protected $database;
 
@@ -58,22 +57,6 @@ class Bicycle {
   // ----- END OF ACTIVE RECORD CODE ------
 
   public $id;
-=======
-  // -- Start of Active Record Code --
-  static public $database;
-
-  function set_database($database) {
-    self::$database = $database;
-  }
-  
-  static public function find_all() {
-    $sql = "SELECT * FROM bicycles";
-    return self::$database->query($sql);
-  }
-
-  // -- End of Active Record Code --
-
->>>>>>> dev
   public $brand;
   public $model;
   public $year;
@@ -118,12 +101,9 @@ class Bicycle {
     // }
   }
 
-<<<<<<< HEAD
   public function name() {
     return "{$this->brand} {$this->model} {$this->year}";
   }
-=======
->>>>>>> dev
   public function weight_kg() {
     return number_format($this->weight_kg, 2) . ' kg';
   }

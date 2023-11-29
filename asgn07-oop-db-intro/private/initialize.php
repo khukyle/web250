@@ -47,9 +47,5 @@
 
   $database = db_connect();
   Bicycle::set_database($database);
-<<<<<<< HEAD
   
-=======
-
->>>>>>> dev
 ?>

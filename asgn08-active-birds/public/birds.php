@@ -7,34 +7,35 @@
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
 
-
-    <table border="1">
+<table id="birds">
       <tr>
-        <th>Name</th>
+        <th>Common Name</th>
         <th>Habitat</th>
         <th>Food</th>
-        <th>Nest Placement</th>
-        <th>Behavior</th>
-        <th>Conservation</th>
+        <th>Conservation ID</th>
         <th>Backyard Tips</th>
+        <th>Details</th>
       </tr>
+   
 
 <?php
-  $bird = Bird::find_all();
-  $row = $result->fetch_assoc();
-  $result->free();
+  $birds = Bird::find_all();
 ?>
-      <tr>
-        <td><?php echo h($bird->common_name); ?></td>
-        <td><?php echo h($bird->habitat); ?></td>
-        <td><?php echo h($bird->food); ?></td>
-        <td><?php echo h($bird->nest_placement); ?></td>
-        <td><?php echo h($bird->behavior); ?></td>
-        <td><?php echo h($bird->conservation()); ?></td>
-        <td><?php echo h($bird->backyard_tips); ?></td>
-      </tr>
 
-    </table>
+<?php
+  foreach($birds as $bird) {
+?>
+<tr>
+  <td><?php echo h($bird->common_name); ?></td>
+  <td><?php echo h($bird->habitat); ?></td>
+  <td><?php echo h($bird->food); ?></td>
+  <td><?php echo h($bird->conservation_id); ?></td>
+  <td><?php echo h($bird->backyard_tips); ?></td>
+  <td><a href="detail.php?id=<?php echo $bird->id; ?>">View</a></td>
+</tr>
 
+<?php } ?>
+
+</table>
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>
