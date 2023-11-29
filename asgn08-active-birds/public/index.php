@@ -8,6 +8,6 @@
     <li><a href="<?php echo url_for('/about.php'); ?>">About Us</a></li>
   </ul>
   
-  <a href="/web250/index.html">Index</a>
+  <a href="/web250/index.php">Index</a>
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>
