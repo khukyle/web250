@@ -1,15 +1,5 @@
 <?php
 
-function require_login() {
-  
-  global $session;
-  if(!$session->is_logged_in()) {
-    redirect_to(url_for('/public/login.php'));
-  } else {
-    // Do nothing, let the rest of the page proceed
-  }
-}
-
 function display_errors($errors=array()) {
   $output = '';
   if(!empty($errors)) {
