@@ -30,6 +30,10 @@ class Bird extends DatabaseObject {
     $this->backyard_tips = $args['backyard_tips'] ?? '';
   }
 
+  public function name() {
+    return "{$this->common_name}";
+  }
+
   
   public function conservation() {
     if($this->conservation_id > 0) {

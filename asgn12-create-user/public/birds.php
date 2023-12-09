@@ -7,8 +7,6 @@
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
 
-<a href="new.php">Add a bird</a>
-
     <table border="1">
       <tr>
         <th>Name</th>
@@ -31,10 +29,7 @@
         <td><?php echo h($bird->food); ?></td>
         <td><?php echo h($bird->conservation()); ?></td>
         <td><?php echo h($bird->backyard_tips); ?></td>
-        <td><a href="show.php?id=<?php echo $bird->id; ?>">View</a></td>
-        <td><a href="edit.php?id=<?php echo $bird->id; ?>">Edit</a></td>
-        <td><a href="<?php echo url_for('delete.php?id=' . h(u($bird->id))); ?>">Delete</a></td>
-
+        <td><a href="detail.php?id=<?php echo $bird->id; ?>">View</a></td>
       </tr>
       <?php } ?>
 

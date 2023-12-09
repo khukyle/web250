@@ -1,13 +1,8 @@
 <?php
 
-require_once('../private/initialize.php');
+require_once('../../../private/initialize.php');
 
-/* 
-  Use the bicycles/staff/new.php file as a guide 
-  so your file mimics the same functionality.
-  Be sure to include the display_errors() function.
-*/
-
+require_login();
 
 if(is_post_request()) {
 
@@ -19,7 +14,7 @@ if(is_post_request()) {
   if($result === true) {
     $new_id = $bird->id;
     $_SESSION['message'] = 'The bird was added successfully.';
-    redirect_to(url_for('show.php?id=' . $new_id));
+    redirect_to(url_for('/members/birds/show.php?id=' . $new_id));
   } else {
     // show errors
   }
@@ -32,17 +27,18 @@ if(is_post_request()) {
 ?>
 
 <?php $page_title = 'Add Bird'; ?>
+<?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('birds.php'); ?>">&laquo; Back to List</a>
+  <a class="back-link" href="<?php echo url_for('/members/birds/index.php'); ?>">&laquo; Back to List</a>
 
   <div class="bird new">
     <h1>Add Bird</h1>
 
     <?php echo display_errors($bird->errors); ?>
 
-    <form action="<?php echo url_for('new.php'); ?>" method="post">
+    <form action="<?php echo url_for('/members/birds/new.php'); ?>" method="post">
 
       <?php include('form_fields.php'); ?>
 
@@ -55,4 +51,4 @@ if(is_post_request()) {
 
 </div>
 
-<?php include(SHARED_PATH . '/public_footer.php'); ?>
+<?php include(SHARED_PATH . '/staff_footer.php'); ?>
