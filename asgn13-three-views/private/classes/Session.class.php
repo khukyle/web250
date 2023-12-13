@@ -4,8 +4,8 @@ class Session {
 
   private $member_id;
   public $username;
+  private $user_level;
   private $last_login;
-  public $user_level;
 
   public const MAX_LOGIN_AGE = 60*60*24; // 1 day
 
@@ -41,8 +41,8 @@ class Session {
     unset($_SESSION['last_login']);
     unset($this->member_id);
     unset($this->username);
-    unset($this->last_login);
     unset($this->user_level);
+    unset($this->last_login);
     return true;
   }
 
@@ -50,8 +50,8 @@ class Session {
     if(isset($_SESSION['member_id'])) {
       $this->member_id = $_SESSION['member_id'];
       $this->username = $_SESSION['username'];
+      $this->user_level = $_SESSION['user_level'];
       $this->last_login = $_SESSION['last_login'];
-      $this->last_login = $_SESSION['user_level'];
     }
   }
 

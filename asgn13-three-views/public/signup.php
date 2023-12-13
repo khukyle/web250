@@ -25,6 +25,7 @@ if(is_post_request()) {
 ?>
 
 <?php $page_title = 'Create User'; ?>
+
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div id="content">
